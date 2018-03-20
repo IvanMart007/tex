@@ -1,0 +1,43 @@
+\documentclass[russian,utf8,simple]{eskdtext}
+
+\input{src/packages.tex}
+
+% setup
+\newcommand{\FrontPageDepartment}{ИТ} %Факультет
+\newcommand{\FrontPageSubdepartment}{ИС} %Кафедра
+\newcommand{\WorkType}{Курсовой проект} %Тип работы (заголовок)
+\newcommand{\Subject}{Предмет} %по ... родительный падеж
+\newcommand{\Topic}{Тема курсового проекта} %Тема
+\newcommand{\Professor}{Иванов~И.~И.} %Руководитель
+\newcommand{\Student}{Петров~П.~П.} %Студент
+\newcommand{\Group}{ИСм-112} %Группа
+\ESKDsignature{МИВУ 230400.68 ПЗ} % Код специальности и тип работы
+\newcommand{\FrontPageDate}{\ddmmyyyydate\today} %Дата
+
+\input{src/setup.tex}
+
+% main document
+\begin{document}
+% Титул
+\ESKDthisStyle{title}
+\input{src/frontpage.tex}
+\newpage
+
+% Аннотация
+\ESKDthisStyle{empty}
+\input{src/annotation.tex}
+\newpage
+
+% Содержание
+\setcounter{page}{4}
+\ESKDthisStyle{formII}
+\tableofcontents
+\newpage
+
+% Основной текст
+\input{src/text.tex}
+\newpage
+
+% Список литературы
+\input{src/bibliography.tex}
+\end{document}
